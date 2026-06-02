@@ -19,12 +19,13 @@ Prioridades del desarrollo:
 9. ms-
 10. ms- 
 
-Guia para nombrar atributos: En caso de necesitar darle id a un modelo, hacerlo en el formato nombreId. Ejemplo: consolaId. No usar el Id al principio 
+Guia para nombrar atributos:
+En caso de necesitar darle id a un modelo, hacerlo en el formato nombreId. Ejemplo: consolaId. No usar el Id al principio 
 
 SERVICIO: ms catalogo
 MODELO: consola 
-ATRIBUTOS: id - nombre - 
+ATRIBUTOS: id - nombre - marca - codigoModelo - descripcion - precio - capacidadAlmacenamiento
 
-SERVICIO: 
-MODELO:  
+SERVICIO: ms-inventario
+MODELO: stock
 ATRIBUTOS: 
