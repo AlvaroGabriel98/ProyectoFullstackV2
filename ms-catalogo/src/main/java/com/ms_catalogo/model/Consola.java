@@ -15,6 +15,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "Consolas")
 
 public class Consola {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -29,7 +30,7 @@ public class Consola {
     private String codigoModelo;
 
     @Column(nullable = false)
-    private String description;
+    private String descripcion;
 
     @Column(nullable = false)
     private BigDecimal precio;
