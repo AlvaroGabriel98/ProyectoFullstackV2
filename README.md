@@ -8,7 +8,6 @@ Packaging: Jar
 Java: 21
 
 Prioridades del desarrollo:
-
 1. eureka-server
 2. auth-server
 3. user-service
