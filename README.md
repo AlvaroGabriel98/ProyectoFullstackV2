@@ -9,24 +9,24 @@ Java: 21
 
 Prioridades del desarrollo:
 
-1 - eureka-server
-2 - auth-server
-3 - user-service
-4 - ms-catalogo
-5 - ms-inventario (antiguo ms-stock)
-6 - ms-ventas  // actualizado al 2 junio
-7 - ms-
-8 - ms-
-9 - ms-
-10- ms- 
+1. eureka-server
+2. auth-server
+3. user-service
+4. ms-catalogo
+5. ms-inventario (antiguo ms-stock)
+6. ms-ventas  // actualizado al 2 junio
+7. ms-
+8. ms-
+9. ms-
+10. ms- 
 
 Guia para nombrar atributos:
 En caso de necesitar darle id a un modelo, hacerlo en el formato nombreId. Ejemplo: consolaId. No usar el Id al principio 
 
 SERVICIO: ms catalogo
 MODELO: consola 
-ATRIBUTOS: id - nombre - 
+ATRIBUTOS: id - nombre - marca - codigoModelo - descripcion - precio - capacidadAlmacenamiento
 
-SERVICIO: 
-MODELO:  
+SERVICIO: ms-inventario
+MODELO: stock
 ATRIBUTOS: 
