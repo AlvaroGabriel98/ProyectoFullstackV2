@@ -24,7 +24,7 @@ En caso de necesitar darle id a un modelo, hacerlo en el formato nombreId. Ejemp
 
 SERVICIO: ms catalogo
 MODELO: consola 
-ATRIBUTOS: id - nombre - marca - codigoModelo - descripcion - precio - capacidadAlmacenamiento
+ATRIBUTOS: id - nombre - marca - descripcion - precio - capacidadAlmacenamiento
 
 SERVICIO: ms-inventario
 MODELO: stock
