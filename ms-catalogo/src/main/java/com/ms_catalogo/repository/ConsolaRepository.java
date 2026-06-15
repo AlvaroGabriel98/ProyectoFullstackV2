@@ -51,8 +51,6 @@ public class ConsolaRepository {
             consola1.setFabricante(consola.getFabricante());
             consola1.setAlmacenamiento(consola.getAlmacenamiento());
             consola1.setPrecio(consola.getPrecio());
-            consola1.setPrecio(consola.getPrecio());
-
             listaConsolas.set(idPosicion, consola1);
             return consola1;
         }
