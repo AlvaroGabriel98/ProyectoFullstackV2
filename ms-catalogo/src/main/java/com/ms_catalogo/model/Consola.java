@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
 @Entity
 @Table(name = "Consolas")
 
@@ -18,17 +17,21 @@ public class Consola {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "id_consola")
+    private Long idConsola;
 
-    @Column(nullable = false)
+    @NotBlank(message = "El nombre de la consola es obligatorio")
+    @Size(max = 100, message = "El nombre no puede superar los 100 caracteres")
+    @Column(nullable = false, length = 100)
     private String nombre;
 
-    @Column(nullable = false)
+    @NotBlank(message = "La marca es obligatoria")
+    @Size(max = 80, message = "La marca no puede superar los 80 caracteres")
+    @Column(nullable = false, length = 80)
     private String marca;
 
-    @Column(nullable = false)
-    private String codigoModelo;
-
+    @Size(max = 255, message = "La descripcion no puede superar los 255 caracteres")
+    @Column(length = 255)
     @Column(nullable = false)
     private String descripcion;
 
