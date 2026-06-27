@@ -1,5 +1,5 @@
 package com.ms_catalogo.repository;
-import com.example.ms_catalogo.model.Consola;
+import com.ms_catalogo.model.Consola;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -10,16 +10,16 @@ public class ConsolaRepository {
     private List<Consola> listaConsolas = new ArrayList<>();
 
     public ConsolaRepository() {
-        listaConsolas.add(new Consola(1,"Playstation 5","Sony","1TB", 599000,20));
+        listaConsolas.add(new Consola());
     }
 
     public List<Consola> obtenerConsolas() {
         return listaConsolas;
     }
 
-    public Consola buscarPorId(Integer id) {
+    public Consola buscarPorId(Integer idConsola) {
         for (Consola consola : listaConsolas) {
-            if (consola.getId().equals(id)) {
+            if (consola.getIdConsola().equals(idConsola)) {
                 return consola;
             }
         }
@@ -27,7 +27,7 @@ public class ConsolaRepository {
     }
 
     public Consola guardar(Consola consola) {
-        if (buscarPorId(consola.getId()) == null) {
+        if (buscarPorId(consola.getIdConsola()) == null) {
             listaConsolas.add(consola);
             return consola;
         }
@@ -39,30 +39,31 @@ public class ConsolaRepository {
         Integer idPosicion = 0;
 
         for (Integer i = 0; i < listaConsolas.size(); i++) {
-            if (listaConsolas.get(i).getId().equals(consola.getId())) {
-                id = consola.getId();
+            if (listaConsolas.get(i).getIdConsola().equals(consola.getIdConsola())) {
+                id = consola.getIdConsola();
                 idPosicion = i;
             }
         }
         if (id!=0) {
             Consola consola1 = new Consola();
-            consola1.setId(id);
+            consola1.setIdConsola(consola.getIdConsola());
             consola1.setNombre(consola.getNombre());
-            consola1.setFabricante(consola.getFabricante());
-            consola1.setAlmacenamiento(consola.getAlmacenamiento());
+            consola1.setMarca(consola.getMarca());
+            consola1.setDescripcion(consola.getDescripcion());
             consola1.setPrecio(consola.getPrecio());
+            consola1.setCapacidadAlmacenamiento(consola.getCapacidadAlmacenamiento());
             listaConsolas.set(idPosicion, consola1);
             return consola1;
         }
         return null;
     }
 
-    public void eliminar(Integer id) {
-        listaConsolas.remove(buscarPorId(id));
+    public void eliminar(Integer idConsola) {
+        listaConsolas.remove(buscarPorId(idConsola));
     }
 
     public Integer totalConsolas() {
         return listaConsolas.size();
     }
-
+}
 
