@@ -11,10 +11,10 @@ import java.util.Map;
 @ControllerAdvice 
 public class GlobalExceptionHandler {
      @ExceptionHandler()
-     public ResponseEntity<Object> handleStockNotFound(ex) {
+     public ResponseEntity<Object> handleStockNotFound() {
         Map<String, Object> body = new HashMap<>();
         body.put("timestamp", LocalDateTime.now());
-        body.put("message", ex.getMessage());
+
         body.put("status", HttpStatus.NOT_FOUND.value());
 
         return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);

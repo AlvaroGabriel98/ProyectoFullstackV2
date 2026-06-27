@@ -1,8 +1,15 @@
 package com.ms_catalogo.model;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,21 +25,19 @@ public class Consola {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_consola")
-    private Long idConsola;
+    private Integer idConsola;
 
-    @NotBlank(message = "El nombre de la consola es obligatorio")
-    @Size(max = 100, message = "El nombre no puede superar los 100 caracteres")
+    @NotNull(message = "El nombre de la consola es obligatorio")
     @Column(nullable = false, length = 100)
     private String nombre;
 
-    @NotBlank(message = "La marca es obligatoria")
+    @NotNull(message = "La marca es obligatoria")
     @Size(max = 80, message = "La marca no puede superar los 80 caracteres")
     @Column(nullable = false, length = 80)
     private String marca;
 
     @Size(max = 255, message = "La descripcion no puede superar los 255 caracteres")
-    @Column(length = 255)
-    @Column(nullable = false)
+    @NotNull(message = "La descripcion es obligatoria")
     private String descripcion;
 
     @Column(nullable = false)
