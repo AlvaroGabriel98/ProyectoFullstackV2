@@ -1,6 +1,6 @@
 package com.ms_notificaciones.dto;
 
-import com.gaming.msnotificaciones.model.TipoNotificacion;
+import com.ms_notificaciones.model.TipoNotificacion;
 import lombok.*;
 
 @Getter

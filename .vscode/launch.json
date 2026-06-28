@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MsNotificacionesApplication",
+            "request": "launch",
+            "mainClass": "com.ms_notificaciones.MsNotificacionesApplication",
+            "projectName": "ms-notificaciones"
+        },
+        {
+            "type": "java",
             "name": "MsStockApplication",
             "request": "launch",
             "mainClass": "com.ms_stock.MsStockApplication",
