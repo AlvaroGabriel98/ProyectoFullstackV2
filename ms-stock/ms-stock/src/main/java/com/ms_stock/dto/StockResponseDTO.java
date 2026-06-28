@@ -10,6 +10,6 @@ import lombok.*;
 public class StockResponseDTO {
 
     private Long id;
-    private Long productId;
+    private Long productoId;
     private Integer cantidad;
 }

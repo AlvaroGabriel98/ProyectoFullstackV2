@@ -11,7 +11,7 @@ import lombok.*;
 public class StockRequestDTO {
 
     @NotNull(message = "El productId es obligatorio")
-    private Long productId;
+    private Long productoId;
 
     @NotNull(message = "La cantidad es obligatoria")
     @Min(value = 0, message = "La cantidad no puede ser negativa")
