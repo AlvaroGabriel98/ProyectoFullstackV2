@@ -1,7 +1,7 @@
 package com.user_service.controller;
 
-import com.gaming.userservice.dto.*;
-import com.gaming.userservice.service.interfaces.UserService;
+import com.user_service.dto.*;
+import com.user_service.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

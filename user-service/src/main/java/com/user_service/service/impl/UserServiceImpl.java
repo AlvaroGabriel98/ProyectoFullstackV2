@@ -1,10 +1,10 @@
 package com.user_service.service.impl;
 
-import com.gaming.user_service.dto.*;
-import com.gaming.user_service.model.User;
-import com.gaming.user_service.exception.*;
-import com.gaming.user_service.repository.UserRepository;
-import com.gaming.user_service.service.UserService;
+import com.user_service.dto.*;
+import com.user_service.model.User;
+import com.user_service.exception.*;
+import com.user_service.repository.UserRepository;
+import com.user_service.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -14,8 +14,8 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class UserServiceImpl {
-    private final UserProfileRepository repository;
+public class UserServiceImpl implements UserService {
+    private final UserRepository repository;
 
     @Override
     public UserResponseDTO createUser(UserRequestDTO request) {
@@ -23,10 +23,10 @@ public class UserServiceImpl {
         log.info("Creando perfil usuario auth ID: {}", request.getAuthUserId());
 
         if(repository.existsByAuthUserId(request.getAuthUserId())) {
-            throw new BusinessException("El perfil ya existe");
+            throw new BussinesException("El perfil ya existe");
         }
 
-        UserProfile user = UserProfile.builder()
+        User user = User.builder()
                 .authUserId(request.getAuthUserId())
                 .firstName(request.getFirstName())
                 .lastName(request.getLastName())
@@ -60,7 +60,7 @@ public class UserServiceImpl {
 
         log.info("Buscando perfil ID: {}", id);
 
-        UserProfile user = repository.findById(id)
+        User user = repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Perfil no encontrado"));
 
         return mapToDTO(user);
@@ -71,7 +71,7 @@ public class UserServiceImpl {
 
         log.info("Actualizando perfil ID: {}", id);
 
-        UserProfile user = repository.findById(id)
+        User user = repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Perfil no encontrado"));
 
         user.setFirstName(request.getFirstName());
@@ -93,7 +93,7 @@ public class UserServiceImpl {
 
         log.info("Deshabilitando perfil ID: {}", id);
 
-        UserProfile user = repository.findById(id)
+        User user = repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Perfil no encontrado"));
 
         user.setActive(false);
@@ -103,7 +103,7 @@ public class UserServiceImpl {
         return new MessageResponseDTO("Perfil deshabilitado correctamente");
     }
 
-    private UserResponseDTO mapToDTO(UserProfile user) {
+    private UserResponseDTO mapToDTO(User user) {
 
         return UserResponseDTO.builder()
                 .id(user.getId())

@@ -1,6 +1,6 @@
-package com.user_service.repository;
+package com.user_service.service;
 
-import com.user_service.model.User;
+import com.user_service.dto.*;
 import java.util.List;
 
 public interface UserService {
