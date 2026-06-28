@@ -1,6 +1,6 @@
 package com.ms_catalogo.service;
-import com.example.ms_catalogo.model.Consola;
-import com.example.ms_catalogo.repository.ConsolaRepository;
+import com.ms_catalogo.model.Consola;
+import com.ms_catalogo.repository.ConsolaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

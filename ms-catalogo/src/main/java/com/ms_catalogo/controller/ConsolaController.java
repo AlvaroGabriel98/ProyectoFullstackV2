@@ -1,7 +1,7 @@
 package com.ms_catalogo.controller;
-import com.example.ms_catalogo.model.Consola;
-import com.example.ms_catalogo.repository.ConsolaRepository;
-import com.example.ms_catalogo.service.ConsolaService;
+import com.ms_catalogo.model.Consola;
+import com.ms_catalogo.repository.ConsolaRepository;
+import com.ms_catalogo.service.ConsolaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

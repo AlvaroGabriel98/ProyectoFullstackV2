@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MsPedidosApplication",
+            "request": "launch",
+            "mainClass": "com.ms_pedidos.MsPedidosApplication",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "MsNotificacionesApplication",
             "request": "launch",
             "mainClass": "com.ms_notificaciones.MsNotificacionesApplication",
