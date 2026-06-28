@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MsStockApplication",
+            "request": "launch",
+            "mainClass": "com.ms_stock.MsStockApplication",
+            "projectName": "ms-stock"
+        },
+        {
+            "type": "java",
             "name": "UserServiceApplication",
             "request": "launch",
             "mainClass": "com.user_service.UserServiceApplication",

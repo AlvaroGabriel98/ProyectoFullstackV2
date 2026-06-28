@@ -1,5 +1,7 @@
-import com.gaming.msstock.dto.*;
-import com.gaming.msstock.service.interfaces.StockService;
+package com.ms_stock.controller;
+
+import com.ms_stock.dto.*;
+import com.ms_stock.service.StockService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -36,13 +38,7 @@ public class StockController {
         return ResponseEntity.ok(stockService.getStockById(id));
     }
 
-    @PostMapping
-    public ResponseEntity<StockResponseDTO> saveStock(
-            @Valid @RequestBody StockRequestDTO request) {
-
-        return ResponseEntity.ok(stockService.saveStock(request));
-    }
-
+   
 
     @PutMapping("/{id}")
     public ResponseEntity<StockResponseDTO> updateStock(
