@@ -19,7 +19,7 @@ public class PedidosDetalle {
 
     @ManyToOne
     @JoinColumn(name = "pedido_id")
-    private Pedido pedido;
+    private Pedidos pedido;
 
     @Column(nullable = false)
     private Long productId;

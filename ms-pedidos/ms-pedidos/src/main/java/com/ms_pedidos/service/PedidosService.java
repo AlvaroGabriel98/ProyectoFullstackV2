@@ -1,6 +1,6 @@
 package com.ms_pedidos.service;
 
-import com.gaming.ms_pedidos.dto.*;
+import com.ms_pedidos.dto.*;
 import java.util.List;
 
 public interface PedidosService {

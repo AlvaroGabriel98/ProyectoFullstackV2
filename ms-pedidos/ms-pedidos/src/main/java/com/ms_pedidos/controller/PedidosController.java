@@ -1,7 +1,7 @@
 package com.ms_pedidos.controller;
 
 import com.ms_pedidos.dto.*;
-import com.ms_pedidos.service.PedidoService;
+import com.ms_pedidos.service.PedidosService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,14 +15,14 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 public class PedidosController {
-   private final PedidoService pedidoService;
+   private final PedidosService pedidosService;
 
     @PostMapping
     public ResponseEntity<PedidoResponseDTO> createPedido(
             @Valid @RequestBody PedidoRequestDTO request) {
 
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(pedidoService.createPedido(request));
+                .body(pedidosService.createPedido(request));
     }
 
     @GetMapping

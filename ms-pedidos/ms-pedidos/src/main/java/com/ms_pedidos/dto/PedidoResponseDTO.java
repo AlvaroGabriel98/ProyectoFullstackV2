@@ -1,6 +1,6 @@
 package com.ms_pedidos.dto;
 
-import com.gaming.mspedidos.entity.EstadoPedido;
+import com.ms_pedidos.model.EstadoPedido;
 import lombok.*;
 
 import java.math.BigDecimal;

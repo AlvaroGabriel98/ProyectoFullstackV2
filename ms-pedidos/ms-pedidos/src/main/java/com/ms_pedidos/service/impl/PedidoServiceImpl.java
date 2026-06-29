@@ -1,10 +1,10 @@
-package com.ms_pedidos.service;
+package com.ms_pedidos.service.impl;
 
 import com.ms_pedidos.dto.*;
 import com.ms_pedidos.model.*;
 import com.ms_pedidos.exception.*;
 import com.ms_pedidos.repository.PedidoRepository;
-import com.ms_pedidos.service.interfaces.PedidoService;
+import com.ms_pedidos.service.interfaces.PedidosService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class PedidoServiceImpl implements PedidoService {
+public class PedidoServiceImpl implements PedidosService {
     private final PedidoRepository pedidoRepository;
 
     @Override
@@ -25,20 +25,20 @@ public class PedidoServiceImpl implements PedidoService {
 
         BigDecimal total = BigDecimal.ZERO;
 
-        Pedido pedido = Pedido.builder()
+        Pedidos pedido = Pedidos.builder()
                 .userId(request.getUserId())
                 .estado(EstadoPedido.PENDIENTE)
                 .active(true)
                 .build();
 
-        List<PedidoDetalle> detalles = request.getDetalles()
+        List<PedidosDetalle> detalles = request.getDetalles()
                 .stream()
                 .map(detalleDTO -> {
 
                     BigDecimal subtotal = detalleDTO.getUnitPrice()
                             .multiply(BigDecimal.valueOf(detalleDTO.getQuantity()));
 
-                    PedidoDetalle detalle = PedidoDetalle.builder()
+                    PedidosDetalle detalle = PedidosDetalle.builder()
                             .pedido(pedido)
                             .productId(detalleDTO.getProductId())
                             .quantity(detalleDTO.getQuantity())
@@ -50,7 +50,7 @@ public class PedidoServiceImpl implements PedidoService {
                 })
                 .toList();
 
-        for(PedidoDetalle detalle : detalles) {
+        for(PedidosDetalle detalle : detalles) {
             total = total.add(detalle.getSubtotal());
         }
 
@@ -80,7 +80,7 @@ public class PedidoServiceImpl implements PedidoService {
 
         log.info("Buscando pedido ID {}", id);
 
-        Pedido pedido = pedidoRepository.findById(id)
+        Pedidos pedido = pedidoRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Pedido no encontrado"));
 
         return mapToDTO(pedido);
@@ -106,7 +106,7 @@ public class PedidoServiceImpl implements PedidoService {
 
         log.info("Cancelando pedido {}", id);
 
-        Pedido pedido = pedidoRepository.findById(id)
+        Pedidos pedido = pedidoRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Pedido no encontrado"));
 
         pedido.setActive(false);
@@ -117,7 +117,7 @@ public class PedidoServiceImpl implements PedidoService {
         return new MessageResponseDTO("Pedido cancelado correctamente");
     }
 
-    private PedidoResponseDTO mapToDTO(Pedido pedido) {
+    private PedidoResponseDTO mapToDTO(Pedidos pedido) {
 
         return PedidoResponseDTO.builder()
                 .id(pedido.getId())
