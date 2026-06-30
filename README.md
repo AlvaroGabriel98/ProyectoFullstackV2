@@ -11,12 +11,12 @@ Prioridades del desarrollo:
 1. eureka-server
 2. auth-server
 3. user-service
-4. ms-catalogo
-5. ms-inventario (antiguo ms-stock)
-6. ms-ventas  // actualizado al 2 junio
-7. ms-
-8. ms-
-9. ms-
+4. api-gateway
+5. ms-catalogo
+6. ms-inventario (antiguo ms-stock)
+7. ms-pago
+8. ms-pedidos
+9. ms-stock
 10. ms- 
 
 Guia para nombrar atributos:
