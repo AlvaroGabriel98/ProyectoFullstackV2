@@ -16,11 +16,14 @@ El proyecto usa una base de datos independiente por microservicio:
 
 | Microservic | Base  datos |
 |-------------|-------------|
-| ms-cliente  | bd_cliente  |
-| ms-consolas | bd_consolas |
-| ms-servicio | bd_servicio |
-| ms-reserva  | bd_reserva  |
-| ms-pago     | bd_pago     |
+| user-service | bd_cliente  |
+| ms-catalogo  | bd_catalogo |
+| ms-servicio  | bd_servicio |
+| ms-inventario| bd_inventario |
+| ms-notificaciones | bd_notificaciones |
+| ms-pago  | bd_pago |
+| ms-pedidos  | bd_pedidos |
+| ms-stock  | bd_stock |
 
 El script de creación se encuentra en:
 
